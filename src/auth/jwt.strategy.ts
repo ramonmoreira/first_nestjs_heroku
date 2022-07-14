@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
-import { environment } from 'environments/environment';
+import { environment } from 'src/environments/environment';
 import { ExtractJwt, VerifiedCallback } from 'passport-jwt';
 import { Strategy } from 'passport-jwt';
 import { AuthService } from './auth.service';

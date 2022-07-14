@@ -2,12 +2,10 @@ import { Module } from '@nestjs/common';
 import { UsersModule } from './models/users/users.module';
 import { MongooseModule } from '@nestjs/mongoose'
 import { AuthModule } from './auth/auth.module';
-import { environment } from 'environments/environment'
+import { environment } from 'src/environments/environment'
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.MONGO_URI || environment.MONGO_URI, {
-      useCreateIndex: false
-    }),
+    MongooseModule.forRoot(process.env.MONGO_URI || environment.MONGO_URI),
     UsersModule,
     AuthModule,
   ],

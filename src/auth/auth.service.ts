@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { UsersService } from 'src/models/users/users.service';
 import { Payload } from 'src/types/payload';
 import { sign } from 'jsonwebtoken';
-import { environment } from 'environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class AuthService {

@@ -5,7 +5,9 @@ import { AuthModule } from './auth/auth.module';
 import { environment } from 'environments/environment'
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.MONGO_URI || environment.MONGO_URI),
+    MongooseModule.forRoot(process.env.MONGO_URI || environment.MONGO_URI, {
+      useCreateIndex: false
+    }),
     UsersModule,
     AuthModule,
   ],

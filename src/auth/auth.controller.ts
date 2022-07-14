@@ -20,8 +20,8 @@ export class AuthController {
     return  "hidden information";
   }
   @Get("/anyone")
-async publicInformation(){
-return  "this can be seen by anyone";
+  async publicInformation(){
+  return  "this can be seen by anyone";
 }
 
     @Post('register')

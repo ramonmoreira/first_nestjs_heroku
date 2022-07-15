@@ -30,10 +30,10 @@ export class AuthController {
     
       email: user.email,
     };
-
     const token = await this.authService.signPayload(payload);
     return { user, token };
   }
+  
   @Post('login')
   async login(@Body() loginDTO: LoginDTO) {
     const user = await this.usersService.findByLogin(loginDTO);

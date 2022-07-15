@@ -1,5 +1,5 @@
 export const environment = {
-    production: true,
+    production: false,
     MONGO_URI: 'mongodb+srv://manomoreira:benga1@cluster0.ouafxtt.mongodb.net/nestjs-heroku?authSource=admin',
     MONGO_USERNAME: 'manomoreira',
     MONGO_PASSWORD: 'benga1',

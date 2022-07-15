@@ -14,6 +14,9 @@ export class Products {
     @Prop()
     description: string;
     
+    @Prop()
+    image: string;
+    
     @Prop({required: true})
     price: string;
     
@@ -23,5 +26,6 @@ export class Products {
     @Prop({required: true})
     rate: number;
 }
+
 
 export const ProductsSchema = SchemaFactory.createForClass(Products);

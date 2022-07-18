@@ -3,7 +3,7 @@ import { Document } from 'mongoose';
 
 export type ProductsDocument = Products & Document;
 
-@Schema()
+@Schema({timestamps: true})
 export class Products {
     @Prop({required: true, unique: true})
     sku: string;

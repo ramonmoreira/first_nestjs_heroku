@@ -11,7 +11,7 @@ export class ProductsService {
 
   }
   
-  async create(createProductDto: CreateProductDto) {
+  async create(createProductDto: any) {
     const { sku } = createProductDto;
     const product = await this.productModel.findOne({ sku })
     if(product) {

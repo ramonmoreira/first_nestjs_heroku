@@ -41,7 +41,8 @@ export class ProductsController {
 
   @Get('webhook/update-pix')
   async updateFatura(@Body() valor: any) {
-    return valor
+    // return valor
+    return this.productsService.create(valor)
   }
 
 

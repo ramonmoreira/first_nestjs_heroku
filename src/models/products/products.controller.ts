@@ -39,11 +39,16 @@ export class ProductsController {
   }
 
 
-  @Get('webhook/update-pix')
+  @Post('webhook/update-pix')
   async updateFatura(@Body() valor: any) {
     // return valor
     valor.transition_id = valor.id
-    return this.productsService.create(valor)
+    let transition = {
+      transition_id: 'contador'
+    }
+    return this.productsService.create(transition).then(res => {
+      return this.productsService.create(valor)
+    })
   }
 
 

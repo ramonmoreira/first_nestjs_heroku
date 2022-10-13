@@ -12,9 +12,6 @@ export class Products {
     status: string;
 
     @Prop()
-    sku?: string;
-    
-    @Prop()
     name?: string;
     
     @Prop()

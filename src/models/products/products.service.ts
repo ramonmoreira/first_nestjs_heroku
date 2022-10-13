@@ -12,12 +12,6 @@ export class ProductsService {
   }
   
   async create(createProductDto: any) {
-    const { sku } = createProductDto;
-    const product = await this.productModel.findOne({ sku })
-    if(product) {
-      throw new HttpException('Product already exists', HttpStatus.BAD_REQUEST)
-    }
-
     const createdProduct = new this.productModel(createProductDto)
     return createdProduct.save()
   }

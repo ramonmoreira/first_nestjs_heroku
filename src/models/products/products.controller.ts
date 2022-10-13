@@ -10,7 +10,7 @@ export class ProductsController {
 
   @Post()
   @UseGuards(AuthGuard("jwt"))
-  create(@Body() createProductDto: CreateProductDto) {
+  create(@Body() createProductDto: any) {
     return this.productsService.create(createProductDto);
   }
 
@@ -42,6 +42,7 @@ export class ProductsController {
   @Get('webhook/update-pix')
   async updateFatura(@Body() valor: any) {
     // return valor
+    valor.transition_id = valor.id
     return this.productsService.create(valor)
   }
 

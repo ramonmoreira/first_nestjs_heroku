@@ -7,7 +7,7 @@ import { ProductsDocument } from './entities/product.entity';
 
 @Injectable()
 export class ProductsService {
-  constructor(@InjectModel('Products') private productModel: Model<ProductsDocument>) {
+  constructor(@InjectModel('Products') private productModel: Model<any>) {
 
   }
   

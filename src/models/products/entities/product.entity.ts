@@ -5,26 +5,32 @@ export type ProductsDocument = Products & Document;
 
 @Schema({timestamps: true})
 export class Products {
-    @Prop({required: true, unique: true})
-    sku: string;
-    
-    @Prop({required: true})
-    name: string;
+    @Prop()
+    transition_id: string;
     
     @Prop()
-    description: string;
+    status: string;
+
+    @Prop()
+    sku?: string;
     
     @Prop()
-    image: string;
-    
-    @Prop({required: true})
-    price: string;
+    name?: string;
     
     @Prop()
-    discount: number;
+    description?: string;
     
-    @Prop({required: true})
-    rate: number;
+    @Prop()
+    image?: string;
+    
+    @Prop()
+    price?: string;
+    
+    @Prop()
+    discount?: number;
+    
+    @Prop()
+    rate?: number;
 }
 
 

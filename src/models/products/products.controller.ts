@@ -37,4 +37,12 @@ export class ProductsController {
   remove(@Param('id') id: string) {
     return this.productsService.remove(id);
   }
+
+
+  @Get('webhook/update-pix')
+  async updateFatura(@Body() valor: any) {
+    return valor
+  }
+
+
 }

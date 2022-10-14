@@ -4,6 +4,8 @@ import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 
+const qs = require('querystring')
+
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
@@ -38,16 +40,23 @@ export class ProductsController {
     return this.productsService.remove(id);
   }
 
+  
 
   @Post('webhook/update-pix')
   async updateFatura(@Body() valor: any) {
     // return valor
-    valor.transition_id = valor.id
+    let decodedData: any = decodeURIComponent(valor)
+    // decodedData = valor.decode('utf-8')
+    // console.log(decodedData)
+    
+    // return decodedData
+
+    decodedData.transition_id = decodedData.id
     let transition = {
       transition_id: 'contador'
     }
     return this.productsService.create(transition).then(res => {
-      return this.productsService.create(valor)
+      return this.productsService.create(decodedData)
     })
   }
 

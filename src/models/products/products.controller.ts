@@ -51,7 +51,7 @@ export class ProductsController {
     
     // return decodedData
 
-    decodedData.transition_id = decodedData.id
+    decodedData.transition_id = decodedData.data.id
     let transition = {
       transition_id: 'contador'
     }

@@ -44,19 +44,13 @@ export class ProductsController {
 
   @Post('webhook/update-pix')
   async updateFatura(@Body() valor: any) {
-    // return valor
-    let decodedData: any = decodeURIComponent(valor)
-    // decodedData = valor.decode('utf-8')
-    // console.log(decodedData)
-    
-    // return decodedData
 
-    decodedData.transition_id = decodedData.data.id
+    valor.transition_id = valor.data.id
     let transition = {
       transition_id: 'contador'
     }
     return this.productsService.create(transition).then(res => {
-      return this.productsService.create(decodedData)
+      return this.productsService.create(valor)
     })
   }
 
